@@ -14,3 +14,7 @@ it('should return the number itself for a single number', () => {
 it('should return sum of two numbers', () => {
   expect(add("1,5")).toBe(6);
 });
+
+it('should return sum of multiple numbers', () => {
+  expect(add("1,2,3")).toBe(6);
+});
