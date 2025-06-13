@@ -10,3 +10,16 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+# String Calculator TDD Kata
+
+This project implements a String Calculator using Test-Driven Development (TDD).
+
+## Features
+
+- Add empty string => `0`
+- Single number => returns number
+- Two/multiple numbers with `,` or `\n` => sum
+- Custom delimiters like `//;\n1;2`
+- Throws error for negative numbers
