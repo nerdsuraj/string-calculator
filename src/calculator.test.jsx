@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect} from 'vitest';
 import { add } from './calculator';
 
 describe('String Calculator', () => {
@@ -26,4 +26,9 @@ it('should handle new lines as delimiter', () => {
 it('should support custom delimiter', () => {
   expect(add("//;\n1;2")).toBe(3);
 });
+
+it('should throw if negative numbers are passed', () => {
+  expect(() => add("1,-2,-3")).toThrow("negative numbers not allowed -2,-3");
+});
+
 
