@@ -18,3 +18,8 @@ it('should return sum of two numbers', () => {
 it('should return sum of multiple numbers', () => {
   expect(add("1,2,3")).toBe(6);
 });
+
+it('should handle new lines as delimiter', () => {
+  expect(add("1\n2,3")).toBe(6);
+});
+
