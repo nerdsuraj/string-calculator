@@ -4,8 +4,10 @@ export function add(numbers) {
     let delimiter = /,|\n/;
     if (numbers.startsWith("//")) {
         const match = numbers.match(/^\/\/(.+)\n/);
+        console.log("🚀 ~ add ~ match:", match)
         if (match) {
-            delimiter = new RegExp(match[1]);
+            delimiter = new RegExp(`\\${match[1]}`);
+            console.log("🚀 ~ add ~ delimiter:", delimiter)
             numbers = numbers.slice(match[0].length);
         }
     }
@@ -16,5 +18,10 @@ export function add(numbers) {
         throw new Error(`negative numbers not allowed ${negatives.join(',')}`);
     }
 
-    return nums.reduce((a, b) => a + b, 0);
+    if(delimiter.source === "\\*"){
+        return nums.reduce((a, b) => a * b,1);
+    }else{
+        return nums.reduce((a, b) => a + b, 0);
+    }
+
 }
